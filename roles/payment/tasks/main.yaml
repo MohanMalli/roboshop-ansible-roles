@@ -1,0 +1,16 @@
+- name: create app directory
+  ansible.builtin.file:
+    path: /app
+    state: directory
+
+- name: maven setup
+  include_role:
+    name: common
+    tasks_from: maven.yaml  
+
+- name: systemd setup
+  include_role:
+    name: common
+    tasks_from: systemd.yaml        
+
+  
