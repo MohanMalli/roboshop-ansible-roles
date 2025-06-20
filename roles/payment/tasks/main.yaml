@@ -1,7 +1,7 @@
-- name: create app directory
-  ansible.builtin.file:
-    path: /app
-    state: directory
+- name: app setup
+  include_role:
+    name: common
+    tasks_from: app-setup.yaml
 
 - name: python setup
   include_role:
