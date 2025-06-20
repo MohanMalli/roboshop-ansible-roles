@@ -3,10 +3,10 @@
     path: /app
     state: directory
 
-- name: maven setup
+- name: python setup
   include_role:
     name: common
-    tasks_from: maven.yaml  
+    tasks_from: python.yaml  
 
 - name: systemd setup
   include_role:
