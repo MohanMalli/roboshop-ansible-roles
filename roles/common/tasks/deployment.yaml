@@ -5,19 +5,23 @@
 
 - name: remove /app directory
   ansible.builtin.file:
-   state: absent
+   state: absent  # remove a directory 
    path: /app
 
 - name: create /app directory
   ansible.builtin.file:
-   state: directory
+   state: directory  # create a directory
    path: /app
 
 - name: download application
   ansible.builtin.unarchive:
     src: "https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-v{{app-version}}.zip"
     dest: /app
-    remote_src: yes      
+    remote_src: yes  
+
+- name: install dependencies
+  community.general.npm:
+   path: /app        
 
 - name: restart {{ component }}
   ansible.builtin.service:
