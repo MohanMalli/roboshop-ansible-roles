@@ -35,7 +35,7 @@
   when: catalogue_output.stdout | int < 0  
   ignore_errors: true
   ignore_unreachable: true
-  
+
 - name: systemd setup
   include_role:
     name: common
@@ -44,6 +44,6 @@
 - name: deployment
   tags:
    - deployment
-  include_role:
+  import_role:
     name: common
     tasks_from: deployment.yaml
