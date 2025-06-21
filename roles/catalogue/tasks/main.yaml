@@ -31,7 +31,7 @@
   when: catalogue_output.stdout | int < 0  
 
 - name: systemd setup
-  include_role:
+  import_role:
     name: common
     tasks_from: systemd.yaml
 
