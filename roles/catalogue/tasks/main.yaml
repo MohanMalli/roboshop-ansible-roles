@@ -48,9 +48,9 @@
 #     name: common
 #     tasks_from: deployment.yaml
 
-#- name: deployment
-#  tags:
-#   - deployment
-#  import_role:  #Tags and when conditions apply to the imported role and its tasks.
-#    name: common
-#    tasks_from: deployment.yaml 
+- name: deployment
+  tags:
+  - deployment
+  import_role:  #Tags and when conditions apply to the imported role and its tasks.
+    name: common
+    tasks_from: deployment.yaml 
